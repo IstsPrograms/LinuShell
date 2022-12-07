@@ -253,6 +253,7 @@ namespace OperManager
         public Macros()
         {
             macro = new Dictionary<string, string>();
+            macro.TryAdd("rave-install", "echo original repository: https://github.com/Ttimofeyka/Rave/\r\nfget https://github.com/Ttimofeyka/Rave/archive/refs/heads/main.zip main.zip\r\nunzip main.zip rave\r\necho Downloaded!");
         }
     }
 

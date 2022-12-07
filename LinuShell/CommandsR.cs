@@ -293,6 +293,12 @@ namespace Cmds
             Engine.OutputSysNE("[HELP] ls");
             Engine.OutputSysNE("[HELP] clear");
             Engine.OutputSysNE("[HELP] touch <file name>");
+            Engine.OutputSysWW("[HELP] run <file name>.sh");
+            Engine.OutputSysWW("[HELP] %create <fash script name> (creates macros)");
+            Engine.OutputSysWW("[HELP] %delete <macros name> (deletes macros)");
+            Engine.OutputSysWW("[HELP] %use <macros name> (uses macros)");
+            Engine.OutputSysWW("[HELP] %save (saves all macros)");
+            Engine.OutputSysWW("[HELP] %load (loads all macros)");
         }
 
 
