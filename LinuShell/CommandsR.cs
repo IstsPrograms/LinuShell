@@ -339,6 +339,11 @@ namespace Cmds
             var time = DateTime.Now;
             Engine.OutputSysNE($"[DATE] D{time.Day}.M{time.Month}.Y{time.Year} H{time.Hour}:M{time.Minute}:S{time.Second}");
         } 
+
+        public static void touch()
+        {
+            mkfile();
+        }
         
     }
 }
