@@ -53,7 +53,7 @@ namespace OperManager
                         {
                             Engine.OutputSysWE("[MACROMGR] Unknown error");
                         }
-                        return;
+                        return; 
                     case MacroOperationType.Use:
                         string uselessVariable = "";
                         bool tryGetValue = macros.macro.TryGetValue(args, out uselessVariable);
