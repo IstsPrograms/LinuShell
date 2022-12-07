@@ -9,7 +9,7 @@ namespace ExecuteEngines
             string scriptToExecute = Environment.GetEnvironmentVariable("runApp");
             if(Environment.OSVersion.Platform == PlatformID.Unix)
             {
-                Process.Start($"bash {Environment.CurrentDirectory}/{scriptToExecute}");
+                Process.Start($"/bin/bash ", $"{Environment.CurrentDirectory}/{scriptToExecute}");
                 Engine.OutputSysNE("[SH] Script executing started!");
             }
             else

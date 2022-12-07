@@ -329,7 +329,7 @@ namespace Cmds
                 switch (args.Split()[0])
                 {
                     case "run":
-                        Engine.OutputSysNE("[ABOUT] Using command run you can execute files with extensions .exe, .bat");
+                        Engine.OutputSysNE("[ABOUT] Using command run you can execute bash scripts");
                         break;
                 }
             }
