@@ -3,7 +3,6 @@ using Cmds;
 using Hydrium;
 using Services;
 using ExecuteEngines;
-CommandsR.sys();
 string cPath = string.Empty;
 if(Environment.UserName == "root")
 {

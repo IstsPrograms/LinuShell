@@ -175,36 +175,42 @@ namespace OperManager
                         Engine.OutputSysWE($"[OPERTURE] {ex}");
                     }
                 }
-
-                if (getData.Split()[0][0] == '%') 
+                try
                 {
-                    string splittedGetData = getData.Split()[0].Replace("%", "");
-                    try
+                    if (getData.Split()[0][0] == '%')
                     {
-                        switch (splittedGetData)
+                        string splittedGetData = getData.Split()[0].Replace("%", "");
+                        try
                         {
-                            case "create":
-                                await MacroManager(MacroOperationType.Create, getData.Split()[1]);
-                                break;
-                            case "use":
-                                await MacroManager(MacroOperationType.Use, getData.Split()[1]);
-                                break;
-                            case "delete":
-                                await MacroManager(MacroOperationType.Delete, getData.Split()[1]);
-                                break;
-                            case "save":
-                                await MacroManager(MacroOperationType.Save, "");
-                                break;
-                            case "load":
-                                await MacroManager(MacroOperationType.Load, "");
-                                break;
+                            switch (splittedGetData)
+                            {
+                                case "create":
+                                    await MacroManager(MacroOperationType.Create, getData.Split()[1]);
+                                    break;
+                                case "use":
+                                    await MacroManager(MacroOperationType.Use, getData.Split()[1]);
+                                    break;
+                                case "delete":
+                                    await MacroManager(MacroOperationType.Delete, getData.Split()[1]);
+                                    break;
+                                case "save":
+                                    await MacroManager(MacroOperationType.Save, "");
+                                    break;
+                                case "load":
+                                    await MacroManager(MacroOperationType.Load, "");
+                                    break;
+                            }
                         }
+                        catch
+                        {
+                            Engine.OutputSysWE("[MACROMGR] ");
+                        }
+
                     }
-                    catch
-                    {
-                        Engine.OutputSysWE("[MACROMGR] ");
-                    }
-                    
+                }
+                catch
+                {
+
                 }
             }
         }
