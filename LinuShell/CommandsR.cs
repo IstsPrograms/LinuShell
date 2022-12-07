@@ -292,9 +292,7 @@ namespace Cmds
             Engine.OutputSysNE("[HELP] fash <filename> (runs a pre-pared script with commands)");
             Engine.OutputSysNE("[HELP] ls");
             Engine.OutputSysNE("[HELP] clear");
-            Engine.OutputSysNE("[HELP] about");
             Engine.OutputSysNE("[HELP] touch <file name>");
-            Engine.OutputSysWW("[HELP] run <file name> (experimental function)");
         }
 
 
