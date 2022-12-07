@@ -30,28 +30,28 @@ namespace OperManager
                             bool resultOf = macros.macro.TryAdd(args.Split('.')[0], File.ReadAllText(Environment.CurrentDirectory + "/" + args));
                             if (resultOf)
                             {
-                                Engine.OutputSysNE($"[MACROMGR] Macro with name {args.Split('.')[0]} has been created");
+                                Engine.OutputSysNE($"[MACROSMGR] Macro with name {args.Split('.')[0]} has been created");
                             }
                             else
                             {
-                                Engine.OutputSysWE("[MACROMGR] Unknown error");
+                                Engine.OutputSysWE("[MACROSMGR] Unknown error");
                             }
                             return;
                         }
                         else
                         {
-                            Engine.OutputSysWE($"[MACROMGR] File does not exists, macro can't be created");
+                            Engine.OutputSysWE($"[MACROSMGR] File does not exists, macro can't be created");
                             return;
                         }
                     case MacroOperationType.Delete:
                         bool result = macros.macro.Remove(args);
                         if (result)
                         {
-                            Engine.OutputSysNE($"[MACROMGR] Macro with name {args} has been deleted");
+                            Engine.OutputSysNE($"[MACROSMGR] Macro with name {args} has been deleted");
                         }
                         else
                         {
-                            Engine.OutputSysWE("[MACROMGR] Unknown error");
+                            Engine.OutputSysWE("[MACROSMGR] Unknown error");
                         }
                         return; 
                     case MacroOperationType.Use:
@@ -63,7 +63,8 @@ namespace OperManager
                         }
                         else
                         {
-                            Engine.OutputSysWE("[MACROMGR] Unknown error");
+                            Engine.OutputSysWE("[MACROSMGR] Macros has not found");
+                            Engine.OutputSysWW("[MACROSMGR] You can install Rave programming language, using macros rave-install!");
                         }
                         return;
                     case MacroOperationType.Save:
@@ -79,7 +80,7 @@ namespace OperManager
                         var stream = new StreamWriter(pathToSave);
                         JsonSerializer.Serialize<Dictionary<string, string>>(stream.BaseStream, macros.macro);
                         stream.Close();
-                        Engine.OutputSysNE("[MACROMGR] All macro has been saved");
+                        Engine.OutputSysNE("[MACROSMGR] All macros has been saved");
                         return;
                     case MacroOperationType.Load:
                         pathToSave = string.Empty;
@@ -94,7 +95,7 @@ namespace OperManager
                         var streamLoad = new StreamReader(pathToSave);
                         macros.macro = JsonSerializer.Deserialize<Dictionary<string, string>>(streamLoad.BaseStream);
                         streamLoad.Close();
-                        Engine.OutputSysNE("[MACROMGR] All macro has been loaded");
+                        Engine.OutputSysNE("[MACROSMGR] All macros has been loaded");
                         return;
                 }
             }
