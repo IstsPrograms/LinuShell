@@ -293,6 +293,7 @@ namespace Cmds
             Engine.OutputSysNE("[HELP] ls");
             Engine.OutputSysNE("[HELP] clear");
             Engine.OutputSysNE("[HELP] about");
+            Engine.OutputSysNE("[HELP] touch <file name>");
             Engine.OutputSysWW("[HELP] run <file name> (experimental function)");
         }
 
