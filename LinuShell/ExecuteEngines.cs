@@ -1,5 +1,6 @@
 ﻿using Hydrium;
 using System.Diagnostics;
+
 namespace ExecuteEngines
 {
     public class Engines
@@ -25,6 +26,19 @@ namespace ExecuteEngines
             else
             {
                 Engine.OutputSysWE("[SH] Incompatible platform");
+            }
+        }
+        public static void o()
+        {
+            string args = Environment.GetEnvironmentVariable("runApp");
+            if(Environment.OSVersion.Platform == PlatformID.Unix)
+            {
+                Engine.OutputSysWW("[O] Starting..");
+                Process.Start($"{Environment.CurrentDirectory}/{args}");
+            }
+            else
+            {
+                Engine.OutputSysWE("[O] Incompatible platform");
             }
         }
     }
