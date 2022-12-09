@@ -13,6 +13,10 @@ namespace ExecuteEngines
                 {
                     Process.Start("/usr/bin/bash", Environment.CurrentDirectory + "/" + args);
                 }
+                else if(File.Exists("/bin/bash"))
+                {
+                    Process.Start("/bin/bash", Environment.CurrentDirectory + "/" + args);
+                }
                 else
                 {
                     Engine.OutputSysWE("[SH] No bash detected");
