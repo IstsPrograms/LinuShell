@@ -64,7 +64,6 @@ namespace OperManager
                         else
                         {
                             Engine.OutputSysWE("[MACROSMGR] Macros has not found");
-                            Engine.OutputSysWW("[MACROSMGR] You can install Rave programming language, using macros rave-install!");
                         }
                         return;
                     case MacroOperationType.Save:
@@ -254,7 +253,6 @@ namespace OperManager
         public Macros()
         {
             macro = new Dictionary<string, string>();
-            macro.TryAdd("rave-install", "echo original repository: https://github.com/Ttimofeyka/Rave/\r\nfget https://github.com/Ttimofeyka/Rave/archive/refs/heads/main.zip main.zip\r\nunzip main.zip rave\r\necho Downloaded!");
         }
     }
 
