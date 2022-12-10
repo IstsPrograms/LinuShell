@@ -22,7 +22,7 @@ namespace ExecuteEngines
                 {
                     Engine.OutputSysWE("[SH] No bash detected");
                 }
-            }
+            } 
             else
             {
                 Engine.OutputSysWE("[SH] Incompatible platform");
