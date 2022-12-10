@@ -33,7 +33,7 @@ namespace ExecuteEngines
             string args = Environment.GetEnvironmentVariable("runApp");
             if(Environment.OSVersion.Platform == PlatformID.Unix)
             {
-                Engine.OutputSysWW("[O] Starting..");
+                Engine.OutputSysWW("[O] Possible error: Access denied");
                 Process.Start($"{Environment.CurrentDirectory}/{args}");
             }
             else
